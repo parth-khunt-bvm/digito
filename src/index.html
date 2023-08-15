@@ -16,9 +16,16 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    
 
     <style>
 
+.active {
+color: blue;
+display: block;
+}
       #dropdownNavbar{
         position: absolute;
       inset: 0px auto auto 0px;
@@ -384,24 +391,25 @@
             id="navbar-sticky"
           >
             <ul
-              class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+              class="flex navbar-ul nav-tabs flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
             >
               <li>
                 <a
                   href="#"
-                  class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  class="block  py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent
+                   md:text-black md:p-0 md:dark:text-blue-500"
                   aria-current="page"
                   >Home</a
                 >
               </li>
-              <li>
-                <button
+              <!-- <li>
+                <a href="#about"
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
                   class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent sm:w-[90vw]"
                 >
-                  About Us
-                  <svg
+                  About Us -->
+                  <!-- <svg
                     class="w-2.5 h-2.5 ml-2.5"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -415,13 +423,20 @@
                       stroke-width="2"
                       d="m1 1 4 4 4-4"
                     />
-                  </svg>
-                </button>
+                  </svg> -->
+                <!-- </a> -->
+                <li >
+                  <a
+                    href="#about"
+                    class="block   py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    >About Us</a
+                  >
+                </li>
                 <div
                   id="dropdownNavbar"
                   class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                 >
-                  <ul
+                  <!-- <ul
                     class="py-2 text-sm text-gray-700 dark:text-gray-400"
                     aria-labelledby="dropdownLargeButton"
                   >
@@ -439,34 +454,31 @@
                         >Earnings</a
                       >
                     </li>
-                  </ul>
+                  </ul> -->
                 </div>
               </li>
               <li>
                 <a
                   href="#services"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2    pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >Services</a
                 >
               </li>
-              <li>
-                <a
-                  href="#history"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >History</a
-                >
+              <li class="active">
+                <a href="#history" class="block py-2 pl-3 pr-4  text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">History</a>
               </li>
               <li>
+                
                 <a
                   href="#blog"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2 pl-3 pr-4    text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >Blog</a
                 >
               </li>
               <li>
                 <a
                   href="#faqs"
-                  class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2 pl-3   pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >FAQs</a
                 >
               </li>
@@ -482,10 +494,12 @@
           class="mx-auto flex py-24 md:flex-row lg:ml-[12%] pr-0 flex-col-reverse items-center"
         >
           <div
-            class="md:pl-[10px] lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
+            class="md:pl-[10px] lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start
+             md:text-left mb-16 md:mb-0 items-center text-center md:mt-[-7%]"
           >
             <h1
-              class="max-w-2xl max-sm:text-[30px] md:text-[30px] mb-8 lg:text-[31px] 2xl:text-[56px] font-extrabold dark:text-white font-santoshi sm:text-[2rem] xs:text-4xl sm:mt-[16%] xs:mt-[12% ]"
+              class="max-w-2xl max-sm:text-[30px] md:text-[30px] mb-8 lg:text-[31px] 2xl:text-[56px]
+               font-extrabold dark:text-white font-santoshi sm:text-[2rem] xs:text-4xl sm:mt-[16%] xs:mt-[12%]"
             >
               Everything you <br />
               need to run your <br />
@@ -498,16 +512,23 @@
               lobortis ut tellus euismod porttitor
             </p>
             <div class="flex justify-center">
-              <div>
+              <div class="lg:flex">
                 <button
                   type="button"
-                  class="text-white font-[700] leading-[21.6px] text-[16px] w-[134px] h-[54px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="text-white font-[700] leading-[21.6px] text-[16px] w-[134px] h-[54px] 
+                  bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 
+                  rounded-full px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 
+                  dark:focus:ring-blue-800"
                 >
                   Get Started
                 </button>
                 <button
                   type="button"
-                  class="w-[156px] h-[54px] text-[16px] leading-[21.6px] font-[700] py-2.5 px-5 text-blue-600 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 text-center hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                  class="w-[156px] h-[54px] text-[16px] leading-[21.6px] font-[700] py-2.5
+                   px-5 text-blue-600 focus:outline-none bg-white rounded-full border 
+                   border-gray-200 hover:bg-gray-100 text-center hover:text-blue-700
+                    focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 
+                    dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                 >
                   Discover More
                 </button>
@@ -515,8 +536,11 @@
             </div>
           </div>
           <div
-            class="lg:max-w-lg lg:w-[852px] md:w-[50%] w-5/6 backgroundimg 2xl:[w-max-width: 40rem] sm:w-[70.33%]"
+            class="lg:max-w-[46rem] lg:w-[852px] md:w-[55%] w-5/6 backgroundimg  
+            sm:w-[70.33%] "
           >
+          <!-- 2xl:max-w-[42rem] xl:max-w-[34rem] lg:max-w-[43rem] -->
+
             <img
               class="object-cover object-center rounded"
               alt="hero"
@@ -529,12 +553,14 @@
       </section>
     </div>
 
-    <div>
-      <section class="bg-[#FAFAFC]">
+    <div id="about">
+      <section class="bg-[#FAFAFC]  2xl:mt-[-5%] xl:mt-[-7.5%] lg:mt-[-9.2%] md:mt-[-11%]" >
         <div>
           <h1
-            class="font-[900] leading-[48.6px] text-[36px] text-center pt-20 pb-[10px] xs:mt-[-17%]"
+            class="font-[900] leading-[48.6px] text-[36px] text-center pt-20 pb-[10px] xs:mt-[-17%]
+            "
           >
+          <!-- 2xl:mt-[-6%] xl:mt-[-7%] lg:mt-[-9%] md:mt-[-10%] -->
             About Us
           </h1>
           <div
@@ -546,7 +572,9 @@
           class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12"
         >
           <div
-            class="bg-[#FAFAFC] mx-auto lg:flex about-img items-center about-gap 2xl:w-[1246px] 2xl:h-[642px] 2xl:flex-row xl:w-[1246px] xl:h-[642px] lg:w-[925px] xl:flex-row lg:flex-col lg:h-[1103px] md:w-[746px] md:mx-auto md:h-[1101px] sm:w-[626px] sm:h-[1205px]"
+            class="bg-[#FAFAFC] mx-auto lg:flex about-img items-center about-gap 2xl:w-[1246px] 
+            2xl:h-[642px] 2xl:flex-row xl:w-[1246px] xl:h-[642px] lg:w-[925px] xl:flex-row lg:flex-col 
+            lg:h-[1103px] md:w-[746px] md:mx-auto md:h-[1101px] sm:w-[626px] sm:h-[1205px]"
           >
             <div
               class="w-[592px] h-[400px] rounded-[12px] md:mx-auto sm:ml-3 xs:w-[91vw] xs:h-[244px]"
@@ -1707,7 +1735,7 @@
 
     <!-- Our FAQs  -->
     <div id="faqs">
-      <section class="w-[100%] mt-[100px] md:mt-[269px] 2xl:mt-[7%]" >
+      <section class="w-[100%] mt-[100px] md:mt-[269px] 2xl:mt-[7%] lg:mt-[185px]" >
         <div
           class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 sm:mt-[36%] 2xl:mt-[10%] xl:mt-[-12%] lg:mt-[-12%] md:-[-12%] sm:mt-[-12%]"
         >
@@ -2076,5 +2104,24 @@
         },
       };
     </script>
+ 
+ 
+
+  <script type="text/javascript">
+    $("ul.navbar-ul.nav-tabs").on('click', 'li', function(){
+      $(this).siblings().removeClass('active');
+      $(this).addClass('active');
+  
+     
+      $(this).siblings().find('a').removeClass('text-blue-700 md:hover:text-blue-500 dark:hover:text-blue-500');
+  
+    
+      $(this).find('a').addClass('text-blue-700 md:hover:text-blue-500 dark:hover:text-blue-500');
+    });
+  </script>
+  
   </body>
 </html>
+
+
+
