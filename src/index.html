@@ -29,7 +29,8 @@
                 font-weight:400;
                 font-size:18px;
                 line-height:26px;
-                color:#1C1C1CB8
+                color:#1C1C1CB8;
+                white-space: nowrap;
             }
             .main-title{
                 font-family: 'Satoshi', sans-serif;
@@ -161,6 +162,38 @@
             @media (max-width: 768px) {
                 html {font-size: 14px;}
             }
+            .flip-container {
+                perspective: 1000;
+            }
+
+            .flip-container:hover .flipper, .flip-container.hover .flipper {
+                transform: rotateY(180deg);
+            }
+
+            .flip-container, .front, .back {
+                width: 134px;
+                height: 137px;
+            }
+
+            .flipper {
+                transition: 0.6s;
+                transform-style: preserve-3d;
+                position: relative;
+            }
+
+            .front, .back {
+                backface-visibility: hidden;
+                position: absolute;
+            }
+
+            .front {
+                z-index: 2;
+                transform: rotateY(0deg);
+            }
+
+            .back {
+                transform: rotateY(180deg);
+            }
         </style>
         <div>
             <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-gray-200 dark:border-gray-600">
@@ -171,7 +204,7 @@
                 </a>
                 <div class="flex md:order-2">
                     <button type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            class="satoshi-font text-white h-[54px] w-[147px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Install Theme
                     </button>
                     <button
@@ -198,7 +231,7 @@
                     </button>
                 </div>
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                    <ul class="flex navbar-ul nav-tabs flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <ul class="satoshi-font flex navbar-ul nav-tabs flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
                             <a href="#"
                                 class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 md:dark:text-blue-500"
@@ -257,13 +290,13 @@
                         <div class="lg:flex">
                             <button type="button"
                                 class="text-white font-[700] leading-[21.6px] text-[16px] w-[134px] h-[54px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300
-                                rounded-full px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                rounded-full px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 satoshi-font">
                                 Get Started
                             </button>
                             <button type="button"
                                 class="w-[156px] h-[54px] text-[16px] leading-[21.6px] font-[700] py-2.5 px-5 text-blue-600 focus:outline-none bg-white rounded-full border
-                                border-gray-200 hover:bg-gray-100 text-center hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
-                                dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                 hover:bg-gray-100 text-center hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
+                                dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 satoshi-font" style="border: #0055FF solid 1px">
                                 Discover More
                             </button>
                         </div>
@@ -283,18 +316,16 @@
 
         <!-- about us  -->
         <div id="about">
-            <section class="bg-[#FAFAFC]  2xl:mt-[-5%] xl:mt-[-7.5%] lg:mt-[-9.2%] md:mt-[-11%]">
-                <div class="grid justify-items-center">
+            <section class="bg-[#FAFAFC]  2xl:mt-[-5%] xl:mt-[-6.5%] lg:mt-[-9.2%] md:mt-[-11%]">
+                <div class="grid justify-items-center mb-[56px]">
                     <h1 class="main-title text-center pt-20 pb-[10px] xs:mt-[-17%]">
                         About Us
                     </h1>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                 </div>
-                <br/>
                 <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
-                    <div class="bg-[#FAFAFC] mx-auto lg:flex justify-start items-center gap-8 2xl:w-[1246px]
-                        2xl:h-[642px] 2xl:flex-row xl:w-[1246px] xl:h-[642px] lg:w-[925px] xl:flex-row lg:flex-col
-                        lg:h-[1103px] md:w-[746px] md:mx-auto md:h-[1101px] sm:w-[626px] sm:h-[1205px]">
+                    <div class="bg-[#FAFAFC] mx-auto lg:flex justify-start items-center gap-8 2xl:w-[1401px]
+                        2xl:h-[642px] 2xl:flex-row xl:w-[1455px] xl:h-[642px] lg:w-[925px] xl:flex-row lg:flex-col lg:h-[1103px] md:w-[746px] md:mx-auto md:h-[1101px] sm:w-[626px] sm:h-[1205px]">
                         <div class="w-[592px] h-[400px] rounded-[12px] md:mx-auto sm:ml-3 xs:w-[91vw] xs:h-[244px]">
                             <img class="" src="assets/Frame 180.png"/>
                         </div>
@@ -365,8 +396,8 @@
         <!-- services -->
         <div>
             <section class="w-[100%] h-[100%]" id="services">
-                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0">
-                    <div class="grid justify-items-center ">
+                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 mt-[3rem]">
+                    <div class="grid justify-items-center mb-[40px]">
                         <h1 class="main-title text-center pt-20 pb-[10px] xs:pt-[10rem]">
                             Our Services
                         </h1>
@@ -376,12 +407,21 @@
                             <div class="md:flex items-center justify-center justify-around">
                                 <div class="w-[100%] pr-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
-                                        <img class="rounded-[32px]" src="assets/imgonline-com-ua-resize-eYXpKIqyJA9NTp.png"/>
+                                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <img class="rounded-[32px]" src="assets/imgonline-com-ua-resize-eYXpKIqyJA9NTp.png"/>
+                                                </div>
+                                                <div class="back">
+                                                    <img class="rounded-[32px]" src="assets/imgonline-com-ua-resize-eYXpKIqyJA9NTp.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="text-center">
                                             <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[24px]">
                                                 Web & Mobile
                                             </div>
-                                            <p class="font-normal text-gray-400 font-[700] text-[16px] text-lg/[10px] mt-[24px] leading-[26px]">
+                                            <p class="font-normal text-gray-400 font-[700] text-[16px] mt-[24px] leading-[26px]">
                                                 Lorem Ipsum is simply dummy text of the printing and
                                                 typesetting industry Lorem Ipsum has
                                             </p>
@@ -390,12 +430,21 @@
                                 </div>
                                 <div class="w-[100%] pr-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
-                                        <img class="rounded-[32px]" src="assets/i.fb-icon-element-3.png"/>
+                                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-3.png"/>
+                                                </div>
+                                                <div class="back">
+                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-3.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="text-center">
                                             <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[24px]">
                                                 UX Design
                                             </div>
-                                            <p class="font-normal text-gray-400 font-[700] text-[16px] text-lg/[10px] mt-[24px] leading-[26px]">
+                                            <p class="font-normal text-gray-400 font-[700] text-[16px] mt-[24px] leading-[26px]">
                                                 Lorem Ipsum is simply dummy text of the printing and
                                                 typesetting industry Lorem Ipsum has
                                             </p>
@@ -404,12 +453,21 @@
                                 </div>
                                 <div class="w-[100%] pr-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
-                                        <img class="rounded-[32px]" src="assets/i.fb-icon-element-2_margin (1).png"/>
+                                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-2_margin (1).png"/>
+                                                </div>
+                                                <div class="back">
+                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-2_margin (1).png"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="text-center">
                                             <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[24px]">
                                                 Video Production
                                             </div>
-                                            <p class="font-normal text-gray-400 font-[700] text-[16px] text-lg/[10px] mt-[24px] leading-[26px]">
+                                            <p class="font-normal text-gray-400 font-[700] text-[16px] mt-[24px] leading-[26px]">
                                                 Lorem Ipsum is simply dummy text of the printing and
                                                 typesetting industry Lorem Ipsum has
                                             </p>
@@ -418,12 +476,21 @@
                                 </div>
                                 <div class="w-[100%] pl-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
-                                        <img class="rounded-[32px]" src="assets/i.fb-icon-element-5.png"/>
+                                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-5.png"/>
+                                                </div>
+                                                <div class="back">
+                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-5.png"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="text-center">
                                             <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[24px]">
                                                 Digital Marketing
                                             </div>
-                                            <p class="font-normal text-gray-400 font-[700] text-[16px] text-lg/[10px] mt-[24px] leading-[26px]">
+                                            <p class="font-normal text-gray-400 font-[700] text-[16px] mt-[24px] leading-[26px]">
                                                 Lorem Ipsum is simply dummy text of the printing and
                                                 typesetting industry Lorem Ipsum has
                                             </p>
@@ -438,11 +505,13 @@
 
         <!-- our History -->
         <div>
-            <section class="w-[100%] h-[100%] flex flex-col items-center justify-center" id="history">
-                <h1 class="main-title font-[900] leading-[48.6px] text-[36px] text-center pt-20 pb-[10px]">
-                    Our History
-                </h1>
-                <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
+            <section class="w-[100%] h-[100%] flex flex-col items-center justify-center mt-[3rem]" id="history">
+                <div class="mb-[40px]">
+                    <h1 class="main-title font-[900] leading-[48.6px] text-[36px] text-center pt-20 pb-[10px]">
+                        Our History
+                    </h1>
+                    <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
+                </div>
 
                 <div class="flex" id="historyContent">
                     <ul class="relative flex flex-col gap-12 py-12 pl-8 before:absolute xs:pl-[1rem] carousel carousel-main">
@@ -483,7 +552,7 @@
                         </li>
                     </ul>
 
-                    <section class="flex flex-col gap-12 py-12 pl-[7rem] sm:pl-[2rem] xs:hidden">
+                    <section class="flex flex-col gap-12 py-12 pl-[7rem] sm:pl-[5rem] xs:hidden">
                         <div class="range-slider">
                             <div class="input-range absolute"></div>
                             <img src="../src/assets/Group 16.svg" class="relative ml-[-13%] mt-[181%] sm:mt-[386%] sm:ml-[-29%]"/>
@@ -492,8 +561,8 @@
                     </section>
 
                     <div id="sliderContainer" class="slider carousel carousel-main">
-                        <div class="slide" data-index="0">
-                            <img src="../src/assets/Frame 270.png" class="mt-32 w-[105%] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
+                        <div class="slide ml-[3rem]" data-index="0">
+                            <img src="../src/assets/Frame 270.png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 lorem ipsum doller sit
                             </h1>
@@ -505,9 +574,8 @@
                             </span>
                         </div>
 
-                        <div class="slide carousel carousel-main">
-                            <img src="../src/assets/Frame 28 (1).png"
-                                    class="mt-32 w-[105%] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
+                        <div class="slide ml-[3rem] carousel carousel-main">
+                            <img src="../src/assets/Frame 28 (1).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 2lorem ipsum doller sit
                             </h1>
@@ -518,8 +586,8 @@
                               consectetur Fames erat tellus.
                             </span>
                         </div>
-                        <div class="slide carousel carousel-main">
-                            <img src="../src/assets/Frame 28 (2).png" class="mt-32 w-[105%] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
+                        <div class="slide ml-[3rem] carousel carousel-main">
+                            <img src="../src/assets/Frame 28 (2).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 3lorem ipsum doller sit
                             </h1>
@@ -530,8 +598,8 @@
                               consectetur Fames erat tellus.
                             </span>
                         </div>
-                        <div class="slide carousel carousel-main">
-                            <img src="../src/assets/Frame 28 (1).png" class="mt-32 w-[105%] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
+                        <div class="slide ml-[3rem] carousel carousel-main">
+                            <img src="../src/assets/Frame 28 (1).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 4lorem ipsum doller sit
                             </h1>
@@ -542,8 +610,8 @@
                               consectetur Fames erat tellus.
                             </span>
                         </div>
-                        <div class="slide carousel carousel-main">
-                            <img src="../src/assets/Frame 28 (2).png" class="mt-32 w-[80%] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
+                        <div class="slide ml-[3rem] carousel carousel-main">
+                            <img src="../src/assets/Frame 28 (2).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 5lorem ipsum doller sit
                             </h1>
@@ -562,11 +630,13 @@
         <!-- team -->
         <div>
             <section class="">
-                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 ">
-                    <h1 class="main-title text-center pt-20 pb-[10px]">
-                        Meet Our Team
-                    </h1>
-                    <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
+                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 mt-[3rem]">
+                    <div class="mb-[40px]">
+                        <h1 class="main-title text-center pt-20 pb-[10px]">
+                            Meet Our Team
+                        </h1>
+                        <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
+                    </div>
                     <div class="flex lg:justify-between justify-center flex-wrap sm:justify-center lg:flex-row md:flex-wrap sm:flex-wrap">
                             <div>
                                 <div class="pt-[60px]">
@@ -806,9 +876,9 @@
         </div>
 
         <!-- What People Say  -->
-        <div class="container my-24 mx-auto px-[50px] md:px-6 satoshi-font xs:px-[3px] sm:mt-[7rem]">
+        <div class="mx-auto px-[50px] md:px-6 satoshi-font xs:px-[3px]">
             <section class="mb-32 text-center justify-items-center ">
-                <div class="grid justify-items-center mb-12">
+                <div class="grid justify-items-center mb-[65px] mt-[7rem]">
                     <h2 class="main-title  text-3xl font-[900] pb-[10px]">What People Say</h2>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                 </div>
@@ -1045,7 +1115,7 @@
         <div id="">
             <section class="w-[100%] h-[100%]" id="blog">
                 <div class="grid max-w-screen-2xl px-4 xs:mt-[-11rem] mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 sm:mt-[-18%] 2xl:mt-[-2%] xl:mt-[0%] lg:mt-[-11%]">
-                    <div class="grid justify-items-center ">
+                    <div class="grid justify-items-center mb-[40px]">
                         <h1 class="main-title text-center pt-20 pb-[10px]">
                             Our Blog
                         </h1>
@@ -1174,11 +1244,13 @@
         <!-- Our FAQs  -->
         <div id="faqs">
             <section class="w-[100%] mt-[100px] md:mt-[269px] 2xl:mt-[7%] lg:mt-[185px]">
-                <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 sm:mt-[36%] 2xl:mt-[10%] xl:mt-[-12%] lg:mt-[-12%] md:-[-12%] sm:mt-[-12%] justify-items-center ">
-                    <h1 class="main-title text-center pt-20 pb-[10px]">
-                        Our FAQs
-                    </h1>
-                    <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
+                <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 sm:mt-[36%] 2xl:mt-[10%] xl:mt-[-6%] lg:mt-[-12%] md:-[-12%] sm:mt-[-12%] justify-items-center ">
+                    <div class="mb-[40px]">
+                        <h1 class="main-title text-center pt-20 pb-[10px]">
+                            Our FAQs
+                        </h1>
+                        <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
+                    </div>
                     <div class="accordion py-6">
                             <div class="accordion-item">
                                 <div id="myHeading" class="accordion-item-header text-[20px] leading-[27px] font-[500] satoshi-font">
@@ -1263,7 +1335,7 @@
         <div>
             <section>
                 <div class="lg:flex items-center justify-center md:mt-0 xl:p-0 w-[100%] mt-[400px] sm:mt-[99px] md:mt-[74px] xs:mt-[54px]">
-                    <div class="lg:flex pl-[2%] w-[100%] 2xl:pl-[12%] xl:pl-[12%]">
+                    <div class="lg:flex pl-[2%] w-[100%] 2xl:pl-[10%]">
                         <img class="" src="assets/Map.png"/>
                     </div>
                     <div class="p-6 sm:p-8 lg:p-16 space-y-8 w-[100%] bg-[#FAFAFC]">
@@ -1334,7 +1406,7 @@
                             </label>
                         </div>
                         <button type="button"
-                                class="text-white font-[700] leading-[21.6px] mt-8 text-[16px] w-[134px] h-[54px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full px-5 py-2.5 text-center mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                class="satoshi-font text-white font-[700] leading-[21.6px] mt-8 text-[16px] w-[134px] h-[54px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full px-5 py-2.5 text-center mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             Submit Now
                         </button>
                     </form>
@@ -1350,7 +1422,7 @@
                     <div class="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-2 gap-8">
                         <div>
                             <a href="" class="flex items-center justify-center sm:justify-center">
-                                <img src="assets/Group.png" class="h-[48px] w-[41.57px] mr-2"/>
+                                <img src="assets/Group.png" class="h-[48px] w-[41.57px] mr-[2rem]"/>
                                 <span class="text-2xl font-bold">DIGITO</span>
                             </a>
                             <div>
@@ -1412,7 +1484,7 @@
                                     name="floating_first_name"
                                     id="floating_first_name"
                                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                    placeholder=" "
+                                    placeholder="Enter your email "
                                     required
                                 />
                                 <label for="floating_first_name"
