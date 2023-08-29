@@ -14,11 +14,16 @@
         <script src="https://unpkg.com/flickity@2.3.0/dist/flickity.pkgd.min.js"></script>
         <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css "/>
         <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+        <!--used https://animate.style/ for animation-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     </head>
 
     <body>
         <style>
+            html{
+                scroll-behavior: smooth;
+            }
             .main-heading{
                 font-family: 'Satoshi', sans-serif;
                 font-weight:900;
@@ -30,7 +35,6 @@
                 font-size:18px;
                 line-height:26px;
                 color:#1C1C1CB8;
-                white-space: nowrap;
             }
             .main-title{
                 font-family: 'Satoshi', sans-serif;
@@ -67,7 +71,7 @@
             .accordion {
                 width: 90%;
                 max-width: 1000px;
-                margin: 2rem auto;
+                margin: 1.3rem auto;
             }
 
             .accordion-item {
@@ -89,7 +93,7 @@
 
             .accordion-item-header::after {
                 content: "\002B";
-                font-size: 2rem;
+                font-size: 1.6rem;
                 position: absolute;
                 right: 1rem;
                 background-color: #0055ff;
@@ -97,6 +101,7 @@
                 border-radius: 100%;
                 width: 28px;
                 height: 28px;
+                line-height: 25px;
                 text-align: center;
                 padding: 2px;
             }
@@ -202,9 +207,9 @@
                     <img src="assets/Group.png" class="h-[48px] W-[41.57px] mr-2"/>
                     <span class="text-2xl font-bold">DIGITO</span>
                 </a>
-                <div class="flex md:order-2">
+                <div class="flex md:order-2 items-center">
                     <button type="button"
-                            class="satoshi-font text-white h-[54px] w-[147px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            class="satoshi-font text-white w-[110px] h-[40px] md:h-[54px] md:w-[147px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Install Theme
                     </button>
                     <button
@@ -276,13 +281,13 @@
         <div>
             <section class="text-gray-700 body-font">
             <div class="mx-auto flex py-24 md:flex-row lg:ml-[10%] pr-0 flex-col-reverse items-center">
-                <div class="md:pl-[10px] lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center md:mt-[-7%]">
+                <div class="md:pl-5 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center md:mt-[-7%]">
                     <h1 class="max-w-2xl max-sm:text-[30px] lg:text-[56px] md:text-[30px] mb-8 font-extrabold dark:text-white satoshi-font sm:text-[2rem] xs:text-4xl sm:mt-[16%] xs:mt-[12%] lg:leading-[68px] xs:leading-[43px] main-heading">
                         Everything you <br/>
                         need to run your <br/>
                         online business
                     </h1>
-                    <p class="sub-heading max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 satoshi-font sm:text-[130%]">
+                    <p class="sub-heading max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 satoshi-font sm:text-[130%] px-5 md:px-0">
                         Lorem ipsum dolor sit amet consectetur. eget gravida luctus <br/>
                         lobortis ut tellus euismod porttitor
                     </p>
@@ -318,7 +323,7 @@
         <div id="about">
             <section class="bg-[#FAFAFC]  2xl:mt-[-5%] xl:mt-[-6.5%] lg:mt-[-9.2%] md:mt-[-11%]">
                 <div class="grid justify-items-center mb-[56px]">
-                    <h1 class="main-title text-center pt-20 pb-[10px] xs:mt-[-17%]">
+                    <h1 class="main-title text-center pt-[108px] pb-[10px] xs:mt-[-17%]">
                         About Us
                     </h1>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
@@ -396,16 +401,16 @@
         <!-- services -->
         <div>
             <section class="w-[100%] h-[100%]" id="services">
-                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 mt-[3rem]">
+                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0">
                     <div class="grid justify-items-center mb-[40px]">
-                        <h1 class="main-title text-center pt-20 pb-[10px] xs:pt-[10rem]">
+                        <h1 class="main-title text-center pt-[108px] pb-[10px] xs:pt-[10rem]">
                             Our Services
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                     </div>
                     <div class="grid max-w-screen-2xl mx-auto lg:gap-8 xl:gap-0 mt-[60px]">
                             <div class="md:flex items-center justify-center justify-around">
-                                <div class="w-[100%] pr-[10px]">
+                                <div class="w-[100%] pr-0 md:pr-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
                                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                                             <div class="flipper">
@@ -505,9 +510,9 @@
 
         <!-- our History -->
         <div>
-            <section class="w-[100%] h-[100%] flex flex-col items-center justify-center mt-[3rem]" id="history">
+            <section class="w-[100%] h-[100%] flex flex-col items-center justify-center" id="history">
                 <div class="mb-[40px]">
-                    <h1 class="main-title font-[900] leading-[48.6px] text-[36px] text-center pt-20 pb-[10px]">
+                    <h1 class="main-title font-[900] leading-[48.6px] text-[36px] text-center pt-[108px] pb-[10px]">
                         Our History
                     </h1>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
@@ -515,39 +520,39 @@
 
                 <div class="flex" id="historyContent">
                     <ul class="relative flex flex-col gap-12 py-12 pl-8 before:absolute xs:pl-[1rem] carousel carousel-main">
-                        <li role="article" class="relative pl-8 " data-year="2000" id="timelineItem0">
+                        <li role="article" class="relative pl-4 sm:pl-8" data-year="2000" id="timelineItem0">
                             <div class="flex flex-col flex-1 gap-4 ">
-                                <h1 class="text-3xl text-[#808080] leading-6 yearSlide" id="timeline1">2000</h1>
+                                <h1 class="text-1xl sm:text-3xl text-[#808080] leading-6 yearSlide" id="timeline1">2000</h1>
                             </div>
                         </li>
-                        <li role="article" class="relative pl-8 " data-year="2004" id="timelineItem1">
+                        <li role="article" class="relative pl-4 sm:pl-8" data-year="2004" id="timelineItem1">
                             <div class="flex flex-col flex-1 gap-4">
-                                <h1 class="text-3xl text-[#808080] leading-6 yearSlide" id="timeline2">2004</h1>
+                                <h1 class="text-1xl sm:text-3xl text-[#808080] leading-6 yearSlide" id="timeline2">2004</h1>
                             </div>
                         </li>
-                        <li role="article" class="relative pl-8">
-                            <div class="flex flex-col flex-1 gap-4 px-4 w-28 cursor-pointer">
+                        <li role="article" class="relative sm:pl-8">
+                            <div class="flex flex-col flex-1 gap-4 pl-3 sm:px-4 w-28 cursor-pointer">
                                 <img src="../src/assets/arrow-down.png" class="w-9" id="downArrow"/>
                             </div>
                         </li>
-                        <li role="article" class="relative pl-8 " data-year="2008" id="timelineItem2">
+                        <li role="article" class="relative pl-1 sm:pl-8" data-year="2008" id="timelineItem2">
                             <div class="flex flex-col flex-1 gap-4">
-                                <h1 class="text-4xl font-bold text-black leading-6 " id="timeline3">2008</h1>
+                                <h1 class="text-2xl sm:text-4xl font-bold text-black leading-6 " id="timeline3">2008</h1>
                             </div>
                         </li>
-                        <li role="article" class="relative pl-8">
-                            <div class="flex flex-col flex-1 gap-4 px-4 cursor-pointer">
+                        <li role="article" class="relative sm:pl-8">
+                            <div class="flex flex-col flex-1 gap-4 pl-3 sm:px-4 cursor-pointer">
                                 <img src="../src/assets/arrow-down (1).png " class="w-9" id="upArrow"/>
                             </div>
                         </li>
-                        <li role="article" class="relative pl-8 " id="year2012">
+                        <li role="article" class="relative pl-4 sm:pl-8" id="year2012">
                             <div class="flex flex-col flex-1 gap-4">
-                                <h1 class="text-3xl text-[#808080] leading-6 yearSlide" id="timeline4">2012</h1>
+                                <h1 class="text-1xl sm:text-3xl text-[#808080] leading-6 yearSlide" id="timeline4">2012</h1>
                             </div>
                         </li>
-                        <li role="article" class="relative pl-8 " id="year2016">
+                        <li role="article" class="relative pl-4 sm:pl-8" id="year2016">
                             <div class="flex flex-col flex-1 gap-4">
-                                <h1 class="text-3xl text-[#808080] leading-6 yearSlide" id="timeline5">2016</h1>
+                                <h1 class="text-1xl sm:text-3xl text-[#808080] leading-6 yearSlide" id="timeline5">2016</h1>
                             </div>
                         </li>
                     </ul>
@@ -560,8 +565,8 @@
                         </div>
                     </section>
 
-                    <div id="sliderContainer" class="slider carousel carousel-main">
-                        <div class="slide ml-[3rem]" data-index="0">
+                    <div id="sliderContainer" class="slider carousel-main flickity-carousel">
+                        <div class="slide animate__animated animate__fadeIn mx-0 mr-5 sm:mx-[2rem]" data-index="0">
                             <img src="../src/assets/Frame 270.png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 lorem ipsum doller sit
@@ -574,7 +579,7 @@
                             </span>
                         </div>
 
-                        <div class="slide ml-[3rem] carousel carousel-main">
+                        <div class="slide animate__animated animate__fadeIn mx-0 mr-5 sm:mx-[2rem] carousel carousel-main">
                             <img src="../src/assets/Frame 28 (1).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 2lorem ipsum doller sit
@@ -586,7 +591,7 @@
                               consectetur Fames erat tellus.
                             </span>
                         </div>
-                        <div class="slide ml-[3rem] carousel carousel-main">
+                        <div class="slide animate__animated animate__fadeIn mx-0 mr-5 sm:mx-[2rem] carousel carousel-main">
                             <img src="../src/assets/Frame 28 (2).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 3lorem ipsum doller sit
@@ -598,7 +603,7 @@
                               consectetur Fames erat tellus.
                             </span>
                         </div>
-                        <div class="slide ml-[3rem] carousel carousel-main">
+                        <div class="slide animate__animated animate__fadeIn mx-0 mr-5 sm:mx-[2rem] carousel carousel-main">
                             <img src="../src/assets/Frame 28 (1).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 4lorem ipsum doller sit
@@ -610,7 +615,7 @@
                               consectetur Fames erat tellus.
                             </span>
                         </div>
-                        <div class="slide ml-[3rem] carousel carousel-main">
+                        <div class="slide animate__animated animate__fadeIn mx-0 mr-5 sm:mx-[2rem] carousel carousel-main">
                             <img src="../src/assets/Frame 28 (2).png" class="mt-32 w-[422px] h-[200px] md:mr-[-4.75rem] sm:mr-[-4.75rem]"/>
                             <h1 class="capitalize font-[500] text-2xl satoshi-font py-2">
                                 5lorem ipsum doller sit
@@ -630,9 +635,9 @@
         <!-- team -->
         <div>
             <section class="">
-                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 mt-[3rem]">
+                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0">
                     <div class="mb-[40px]">
-                        <h1 class="main-title text-center pt-20 pb-[10px]">
+                        <h1 class="main-title text-center pt-[108px] pb-[10px]">
                             Meet Our Team
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
@@ -878,11 +883,11 @@
         <!-- What People Say  -->
         <div class="mx-auto px-[50px] md:px-6 satoshi-font xs:px-[3px] max-w-screen-2xl">
             <section class="mb-32 text-center justify-items-center ">
-                <div class="grid justify-items-center mb-[65px] mt-[7rem]">
-                    <h2 class="main-title  text-3xl font-[900] pb-[10px]">What People Say</h2>
+                <div class="grid justify-items-center mb-[65px]">
+                    <h2 class="main-title  text-3xl font-[900] pt-[108px] pb-[10px]">What People Say</h2>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                 </div>
-                <div class="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
+                <div class="grid gap-x-6 md:grid-cols-3 px-5 md:px-0 lg:gap-x-12">
                     <div class="mb-12 md:mb-0">
                         <div class="mb-6 flex justify-center satoshi-font">
                             <img src="./assets/Frame 36.png" class="w-32 rounded-full shadow-lg dark:shadow-black/20"/>
@@ -1116,13 +1121,13 @@
             <section class="w-[100%] h-[100%]" id="blog">
                 <div class="grid max-w-screen-2xl px-4 xs:mt-[-11rem] mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 sm:mt-[-18%] 2xl:mt-[-2%] xl:mt-[0%] lg:mt-[-11%]">
                     <div class="grid justify-items-center mb-[40px]">
-                        <h1 class="main-title text-center pt-20 pb-[10px]">
+                        <h1 class="main-title text-center pt-[108px] pb-[10px]">
                             Our Blog
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                     </div>
-                    <div class="flex justify-between flex-wrap w-full h-full lg:flex-row sm:flex-col">
-                            <div class="w-full lg:w-[33.33%] p-4 md:px-[50px] 2xl:px-[10px]">
+                    <div class="flex justify-between flex-wrap w-full h-full lg:flex-row">
+                            <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 md:px-[50px] 2xl:px-[10px]">
                                 <div class="pt-[60px]">
                                     <div class="w-full h-[500px]">
                                         <div>
@@ -1160,7 +1165,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full lg:w-[33.33%] p-4 md:px-[50px] xs:mt-[-127px] 2xl:px-[10px]">
+                            <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 md:px-[50px] xs:mt-[-127px] 2xl:px-[10px]">
                                 <div class="pt-[60px] xs:mt-[60px]">
                                     <div class="w-full h-[500px]">
                                         <div>
@@ -1198,7 +1203,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full lg:w-[33.33%] p-4 xs:mt-[-127px] 2xl:px-[10px] md:px-[50px]">
+                            <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 xs:mt-[-127px] 2xl:px-[10px] md:px-[50px]">
                             <div class="pt-[60px] xs:mt-[60px]">
                                 <div class="w-full h-[500px]">
                                     <div>
@@ -1243,10 +1248,10 @@
 
         <!-- Our FAQs  -->
         <div id="faqs">
-            <section class="w-[100%] mt-[100px] md:mt-[269px] 2xl:mt-[7%] lg:mt-[185px]">
-                <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 sm:mt-[36%] 2xl:mt-[10%] xl:mt-[-6%] lg:mt-[-12%] md:-[-12%] sm:mt-[-12%] justify-items-center ">
+            <section class="w-[100%]">
+                <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 xs:mt-[-10%] sm:mt-[0%] lg:mt-[5%] xl:mt-[5%] lg:mt-[-12%] md:-[-12%] sm:mt-[-12%] justify-items-center ">
                     <div class="mb-[40px]">
-                        <h1 class="main-title text-center pt-20 pb-[10px]">
+                        <h1 class="main-title text-center pt-[108px] pb-[10px]">
                             Our FAQs
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
