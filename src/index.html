@@ -16,7 +16,10 @@
         <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
         <!--used https://animate.style/ for animation-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+        <!--owl carousel-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
     </head>
 
     <body>
@@ -82,7 +85,7 @@
             }
 
             .accordion-item-header {
-                padding: 0.5rem 3rem 0.5rem 1rem;
+                padding: 0.5rem 4rem 0.5rem 1rem;
                 min-height: 3.5rem;
                 line-height: 27px;
                 display: flex;
@@ -138,13 +141,6 @@
                 margin: 0px;
                 transform: translate(32px, 172px)
             }
-            .color1 {
-                color: #0055ff;
-            }
-
-            .color2 {
-                color: black;
-            }
             label {
                 position: absolute;
                 opacity: 0;
@@ -190,6 +186,14 @@
             .front, .back {
                 backface-visibility: hidden;
                 position: absolute;
+                border-radius: 32px;
+            }
+
+            .front svg, .back svg{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
 
             .front {
@@ -199,6 +203,10 @@
 
             .back {
                 transform: rotateY(180deg);
+            }
+
+            #faqs .accordion-item .active{
+                color: #0055ff;
             }
         </style>
         <div>
@@ -281,26 +289,26 @@
         <!-- navbar side content -->
         <div>
             <section class="text-gray-700 body-font">
-            <div class="mx-auto flex py-24 md:flex-row lg:ml-[10%] pr-0 flex-col-reverse items-center">
-                <div class="md:pl-5 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center md:mt-[-7%]">
-                    <h1 class="max-w-2xl max-sm:text-[30px] lg:text-[56px] md:text-[30px] mb-8 font-extrabold dark:text-white satoshi-font sm:text-[2rem] xs:text-4xl sm:mt-[16%] xs:mt-[12%] lg:leading-[68px] xs:leading-[43px] main-heading">
+            <div class="flex pt-[100px] md:flex-row pr-0 flex-col-reverse items-center">
+                <div class="md:pl-5 lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center md:max-w-[50%] mx-auto">
+                    <h1 class="max-w-2xl xs:text-[26px] sm:text-[30px] lg:text-[36px] xl:text-[56px] md:text-[30px] mt-9 md:mt-0 mb-8 font-extrabold dark:text-white satoshi-font sm:text-[2rem] xs:text-4xl xl:leading-[68px] main-heading">
                         Everything you <br/>
                         need to run your <br/>
                         online business
                     </h1>
-                    <p class="sub-heading max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 satoshi-font sm:text-[130%] px-5 md:px-0">
+                    <p class="sub-heading max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 satoshi-font sm:text-[80%] px-5 md:px-0">
                         Lorem ipsum dolor sit amet consectetur. eget gravida luctus <br/>
                         lobortis ut tellus euismod porttitor
                     </p>
                     <div class="flex justify-center">
                         <div class="lg:flex">
                             <button type="button"
-                                class="text-white font-[700] leading-[21.6px] text-[16px] w-[134px] h-[54px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300
+                                class="w-[120px] h-[44px] lg:w-[134px] lg:h-[54px] text-[14px] lg:text-[16px] text-white font-[600] lg:font-[700] leading-[21.6px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300
                                 rounded-full px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 satoshi-font">
                                 Get Started
                             </button>
                             <button type="button"
-                                class="w-[156px] h-[54px] text-[16px] leading-[21.6px] font-[700] py-2.5 px-5 text-blue-600 focus:outline-none bg-white rounded-full border
+                                class="w-[140px] h-[44px] lg:w-[156px] lg:h-[54px] text-[14px] lg:text-[16px] leading-[21.6px] font-[600] lg:font-[700] py-2.5 px-5 text-blue-600 focus:outline-none bg-white rounded-full border
                                  hover:bg-gray-100 text-center hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400
                                 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 satoshi-font" style="border: #0055FF solid 1px">
                                 Discover More
@@ -309,7 +317,7 @@
                     </div>
                 </div>
                 <div class="lg:max-w-[46rem] lg:w-[852px] md:w-[55%] w-5/6 backgroundimg sm:w-[70.33%] ">
-                    <img class="object-cover object-center rounded"
+                    <img class="object-cover object-center rounded md:rounded-none"
                         alt="hero"
                         width="852"
                         height="700"
@@ -322,21 +330,23 @@
 
         <!-- about us  -->
         <div id="about">
-            <section class="bg-[#FAFAFC]  2xl:mt-[-5%] xl:mt-[-6.5%] lg:mt-[-9.2%] md:mt-[-11%]">
-                <div class="grid justify-items-center mb-[56px]">
-                    <h1 class="main-title text-center pt-[108px] pb-[10px] xs:mt-[-17%]">
+            <section class="grid bg-[#FAFAFC] py-[108px]">
+                <div class="grid justify-items-center mb-[60px]">
+                    <h1 class="main-title text-center pb-[10px] xs:mt-[-17%]">
                         About Us
                     </h1>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                 </div>
-                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
-                    <div class="bg-[#FAFAFC] mx-auto lg:flex justify-start items-center gap-8 2xl:w-[1401px]
-                        2xl:h-[642px] 2xl:flex-row xl:w-[1455px] xl:h-[642px] lg:w-[925px] xl:flex-row lg:flex-col lg:h-[1103px] md:w-[746px] md:mx-auto md:h-[1101px] sm:w-[626px] sm:h-[1205px]">
+                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0">
+                    <div class="bg-[#FAFAFC] mx-auto lg:flex justify-start items-center gap-8 2xl:w-[1455px]
+                        2xl:h-[642px] 2xl:flex-row xl:w-[1255px] xl:h-[642px] lg:w-[925px] xl:flex-row lg:flex-col lg:h-[1103px] md:w-[740px] md:mx-auto md:h-[1101px] sm:w-[612px] sm:h-[1205px]">
                         <div class="w-[592px] h-[400px] rounded-[12px] md:mx-auto sm:ml-3 xs:w-[91vw] xs:h-[244px]">
-                            <img class="" src="assets/Frame 180.png"/>
+                            <video poster="assets/Frame%20180.png" controls="controls" class="cursor-pointer rounded-[12px] w-[100%]">
+                                <source src="assets/video%201.mp4" type="video/mp4" />
+                            </video>
                         </div>
 
-                        <div class="w-[592px] h-[642px] flex justify-start items-center gap-8 md:mx-auto md:mt-10 2xl:flex-row xl:flex-row lg:flex-row md:flex sm:flex-row sm:mt-10 xs:mt-[31%] sm:mx-auto xs:flex-col xs:w-[91vw] xs:h-[1161px]">
+                        <div class="w-[592px] h-[642px] flex justify-start items-center gap-8 md:mx-auto md:mt-10 2xl:flex-row xl:flex-row lg:flex-row md:flex sm:flex-row sm:mt-10 xs:mt-[25%] sm:mx-auto xs:flex-col xs:w-[91vw] xs:h-[1161px]">
                             <div class="w-[280px] h-[530px]">
                                 <div class="bg-white shadow w-[280px] h-[249px] rounded-[12px] p-[32px]">
                                     <h1 class="w-[216px] h-[49px] text-[36px] leading-[48.6px] font-[700] text-[#0055FF] satoshi-font">
@@ -401,25 +411,31 @@
 
         <!-- services -->
         <div>
-            <section class="w-[100%] h-[100%]" id="services">
+            <section class="w-[100%] h-[100%] pt-[108px]" id="services">
                 <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0">
-                    <div class="grid justify-items-center mb-[40px]">
-                        <h1 class="main-title text-center pt-[108px] pb-[10px] xs:pt-[10rem]">
+                    <div class="grid justify-items-center mb-[60px]">
+                        <h1 class="main-title text-center pb-[10px] xs:pt-[10rem]">
                             Our Services
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                     </div>
-                    <div class="grid max-w-screen-2xl mx-auto lg:gap-8 xl:gap-0 mt-[60px]">
-                            <div class="md:flex items-center justify-center justify-around">
-                                <div class="w-[100%] mb-8 md:mb-0 pr-0 md:pr-[10px]">
+                    <div class="grid max-w-screen-2xl mx-auto lg:gap-8 xl:gap-0">
+                            <div class="grid items-center justify-center justify-around xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                                <div class="w-[100%] mb-8 lg:mb-0 px-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
                                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                                             <div class="flipper">
-                                                <div class="front">
-                                                    <img class="rounded-[32px]" src="assets/imgonline-com-ua-resize-eYXpKIqyJA9NTp.png"/>
+                                                <div class="front bg-[#0055ff12]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M26.9155 36.0209H11.0822C10.433 36.0209 9.89466 35.4825 9.89466 34.8334C9.89466 34.1842 10.433 33.6459 11.0822 33.6459H26.9155C27.5647 33.6459 28.103 34.1842 28.103 34.8334C28.103 35.4825 27.5647 36.0209 26.9155 36.0209Z" fill="#0055FF"/>
+                                                        <path d="M28.5012 3.16663H9.50117C6.002 3.16663 3.16784 6.00079 3.16784 9.49996V23.75C3.16784 27.2491 6.002 30.0833 9.50117 30.0833H28.5012C32.0003 30.0833 34.8345 27.2491 34.8345 23.75V9.49996C34.8345 6.00079 32.0003 3.16663 28.5012 3.16663ZM15.8187 11.59C16.7053 11.59 17.4178 12.3025 17.4178 13.1733C17.4178 14.0441 16.7053 14.7566 15.8345 14.7566C14.9637 14.7566 14.2512 14.0441 14.2512 13.1733C14.2512 12.3025 14.9478 11.59 15.8187 11.59ZM10.8312 11.59C11.7178 11.59 12.4303 12.3025 12.4303 13.1733C12.4303 14.0441 11.7178 14.7566 10.847 14.7566C9.97617 14.7566 9.26367 14.0441 9.26367 13.1733C9.26367 12.3025 9.9445 11.59 10.8312 11.59ZM27.3295 23.5283H10.7045C10.0395 23.5283 9.50117 22.99 9.50117 22.3408C9.50117 21.6916 10.0237 21.1533 10.6728 21.1533H27.3453C27.9945 21.1533 28.5328 21.6916 28.5328 22.3408C28.5328 22.99 27.9945 23.5283 27.3295 23.5283ZM27.3295 14.3608H21.5028C20.8537 14.3608 20.3153 13.8225 20.3153 13.1733C20.3153 12.5241 20.8537 11.9858 21.5028 11.9858H27.3295C27.9787 11.9858 28.517 12.5241 28.517 13.1733C28.517 13.8225 27.9945 14.3608 27.3295 14.3608Z" fill="#0055FF"/>
+                                                    </svg>
                                                 </div>
-                                                <div class="back">
-                                                    <img class="rounded-[32px]" src="assets/imgonline-com-ua-resize-eYXpKIqyJA9NTp.png"/>
+                                                <div class="back bg-[#0055ff12]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M26.9155 36.0209H11.0822C10.433 36.0209 9.89466 35.4825 9.89466 34.8334C9.89466 34.1842 10.433 33.6459 11.0822 33.6459H26.9155C27.5647 33.6459 28.103 34.1842 28.103 34.8334C28.103 35.4825 27.5647 36.0209 26.9155 36.0209Z" fill="#0055FF"/>
+                                                        <path d="M28.5012 3.16663H9.50117C6.002 3.16663 3.16784 6.00079 3.16784 9.49996V23.75C3.16784 27.2491 6.002 30.0833 9.50117 30.0833H28.5012C32.0003 30.0833 34.8345 27.2491 34.8345 23.75V9.49996C34.8345 6.00079 32.0003 3.16663 28.5012 3.16663ZM15.8187 11.59C16.7053 11.59 17.4178 12.3025 17.4178 13.1733C17.4178 14.0441 16.7053 14.7566 15.8345 14.7566C14.9637 14.7566 14.2512 14.0441 14.2512 13.1733C14.2512 12.3025 14.9478 11.59 15.8187 11.59ZM10.8312 11.59C11.7178 11.59 12.4303 12.3025 12.4303 13.1733C12.4303 14.0441 11.7178 14.7566 10.847 14.7566C9.97617 14.7566 9.26367 14.0441 9.26367 13.1733C9.26367 12.3025 9.9445 11.59 10.8312 11.59ZM27.3295 23.5283H10.7045C10.0395 23.5283 9.50117 22.99 9.50117 22.3408C9.50117 21.6916 10.0237 21.1533 10.6728 21.1533H27.3453C27.9945 21.1533 28.5328 21.6916 28.5328 22.3408C28.5328 22.99 27.9945 23.5283 27.3295 23.5283ZM27.3295 14.3608H21.5028C20.8537 14.3608 20.3153 13.8225 20.3153 13.1733C20.3153 12.5241 20.8537 11.9858 21.5028 11.9858H27.3295C27.9787 11.9858 28.517 12.5241 28.517 13.1733C28.517 13.8225 27.9945 14.3608 27.3295 14.3608Z" fill="#0055FF"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -434,15 +450,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[100%] mb-8 md:mb-0 pr-[10px]">
+                                <div class="w-[100%] mb-8 lg:mb-0 px-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
                                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                                             <div class="flipper">
-                                                <div class="front">
-                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-3.png"/>
+                                                <div class="front bg-[#F0B80F1A]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M30.3043 12.2234C30.7635 13.4109 31.9035 14.25 33.2493 14.25C34.991 14.25 36.416 12.825 36.416 11.0834C36.416 9.34171 34.991 7.91671 33.2493 7.91671C31.9035 7.91671 30.7635 8.75587 30.3043 9.94337C30.2252 9.92754 30.1618 9.89587 30.0827 9.89587H23.7493V8.70837C23.7493 7.41004 22.6727 6.33337 21.3743 6.33337H16.6243C15.326 6.33337 14.2493 7.41004 14.2493 8.70837V9.89587H7.91601C7.83684 9.89587 7.77351 9.92754 7.69434 9.94337C7.23517 8.75587 6.09517 7.91671 4.74934 7.91671C3.00767 7.91671 1.58267 9.34171 1.58267 11.0834C1.58267 12.825 3.00767 14.25 4.74934 14.25C6.09517 14.25 7.23517 13.4109 7.69434 12.2234C7.77351 12.2392 7.83684 12.2709 7.91601 12.2709H11.9852C8.73934 14.6775 6.72851 18.6675 6.72851 22.9584C6.72851 23.2275 6.74434 23.4809 6.77601 23.75H6.33267C5.01851 23.75 3.95767 24.8109 3.95767 26.125V29.2917C3.95767 30.6059 5.01851 31.6667 6.33267 31.6667H9.49934C9.84767 31.6667 10.1643 31.5875 10.4652 31.445C11.2885 31.0967 11.8743 30.2575 11.8743 29.2917V26.125C11.8743 24.8109 10.8135 23.75 9.49934 23.75H9.13517C9.13517 23.7025 9.15101 23.655 9.15101 23.6075C9.11934 23.3859 9.11934 23.18 9.11934 22.9584C9.11934 19.0475 11.1302 15.4692 14.281 13.6167C14.3443 14.8359 15.3735 15.8334 16.6243 15.8334H21.3743C22.6252 15.8334 23.6543 14.8359 23.7335 13.6167C26.8843 15.4692 28.8952 19.0634 28.8952 22.9584C28.8952 23.18 28.8793 23.3859 28.8635 23.6075C28.8635 23.655 28.8793 23.7025 28.8793 23.75H28.4993C27.1852 23.75 26.1243 24.8109 26.1243 26.125V29.2917C26.1243 30.2575 26.7102 31.0967 27.5335 31.445C27.8343 31.5875 28.151 31.6667 28.4993 31.6667H31.666C32.9802 31.6667 34.041 30.6059 34.041 29.2917V26.125C34.041 24.8109 32.9802 23.75 31.666 23.75H31.2227C31.2543 23.4809 31.2702 23.2275 31.2702 22.9584C31.2702 18.6675 29.2593 14.6775 26.0135 12.2709H30.0827C30.1618 12.2709 30.2252 12.2392 30.3043 12.2234Z" fill="#F0B80F"/>
+                                                    </svg>
                                                 </div>
-                                                <div class="back">
-                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-3.png"/>
+                                                <div class="back bg-[#F0B80F1A]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M30.3043 12.2234C30.7635 13.4109 31.9035 14.25 33.2493 14.25C34.991 14.25 36.416 12.825 36.416 11.0834C36.416 9.34171 34.991 7.91671 33.2493 7.91671C31.9035 7.91671 30.7635 8.75587 30.3043 9.94337C30.2252 9.92754 30.1618 9.89587 30.0827 9.89587H23.7493V8.70837C23.7493 7.41004 22.6727 6.33337 21.3743 6.33337H16.6243C15.326 6.33337 14.2493 7.41004 14.2493 8.70837V9.89587H7.91601C7.83684 9.89587 7.77351 9.92754 7.69434 9.94337C7.23517 8.75587 6.09517 7.91671 4.74934 7.91671C3.00767 7.91671 1.58267 9.34171 1.58267 11.0834C1.58267 12.825 3.00767 14.25 4.74934 14.25C6.09517 14.25 7.23517 13.4109 7.69434 12.2234C7.77351 12.2392 7.83684 12.2709 7.91601 12.2709H11.9852C8.73934 14.6775 6.72851 18.6675 6.72851 22.9584C6.72851 23.2275 6.74434 23.4809 6.77601 23.75H6.33267C5.01851 23.75 3.95767 24.8109 3.95767 26.125V29.2917C3.95767 30.6059 5.01851 31.6667 6.33267 31.6667H9.49934C9.84767 31.6667 10.1643 31.5875 10.4652 31.445C11.2885 31.0967 11.8743 30.2575 11.8743 29.2917V26.125C11.8743 24.8109 10.8135 23.75 9.49934 23.75H9.13517C9.13517 23.7025 9.15101 23.655 9.15101 23.6075C9.11934 23.3859 9.11934 23.18 9.11934 22.9584C9.11934 19.0475 11.1302 15.4692 14.281 13.6167C14.3443 14.8359 15.3735 15.8334 16.6243 15.8334H21.3743C22.6252 15.8334 23.6543 14.8359 23.7335 13.6167C26.8843 15.4692 28.8952 19.0634 28.8952 22.9584C28.8952 23.18 28.8793 23.3859 28.8635 23.6075C28.8635 23.655 28.8793 23.7025 28.8793 23.75H28.4993C27.1852 23.75 26.1243 24.8109 26.1243 26.125V29.2917C26.1243 30.2575 26.7102 31.0967 27.5335 31.445C27.8343 31.5875 28.151 31.6667 28.4993 31.6667H31.666C32.9802 31.6667 34.041 30.6059 34.041 29.2917V26.125C34.041 24.8109 32.9802 23.75 31.666 23.75H31.2227C31.2543 23.4809 31.2702 23.2275 31.2702 22.9584C31.2702 18.6675 29.2593 14.6775 26.0135 12.2709H30.0827C30.1618 12.2709 30.2252 12.2392 30.3043 12.2234Z" fill="#F0B80F"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -457,15 +477,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[100%] mb-8 md:mb-0 pr-[10px]">
+                                <div class="w-[100%] mb-8 lg:mb-0 px-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
                                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                                             <div class="flipper">
-                                                <div class="front">
-                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-2_margin (1).png"/>
+                                                <div class="front bg-[#3DCD5C1A]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M33.4868 9.76945C32.8376 9.42112 31.476 9.05695 29.6235 10.3553L27.296 12.0019C27.1218 7.07778 24.9843 5.14612 19.791 5.14612H10.291C4.87597 5.14612 2.77014 7.25195 2.77014 12.6669V25.3336C2.77014 28.9753 4.74931 32.8544 10.291 32.8544H19.791C24.9843 32.8544 27.1218 30.9228 27.296 25.9986L29.6235 27.6453C30.6051 28.3419 31.4601 28.5636 32.141 28.5636C32.7268 28.5636 33.186 28.3894 33.4868 28.2311C34.136 27.8986 35.2285 26.9961 35.2285 24.7319V13.2686C35.2285 11.0045 34.136 10.102 33.4868 9.76945ZM17.416 18.0186C15.7851 18.0186 14.4393 16.6886 14.4393 15.0419C14.4393 13.3953 15.7851 12.0653 17.416 12.0653C19.0468 12.0653 20.3926 13.3953 20.3926 15.0419C20.3926 16.6886 19.0468 18.0186 17.416 18.0186Z" fill="#3DCD5C"/>
+                                                    </svg>
                                                 </div>
-                                                <div class="back">
-                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-2_margin (1).png"/>
+                                                <div class="back bg-[#3DCD5C1A]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M33.4868 9.76945C32.8376 9.42112 31.476 9.05695 29.6235 10.3553L27.296 12.0019C27.1218 7.07778 24.9843 5.14612 19.791 5.14612H10.291C4.87597 5.14612 2.77014 7.25195 2.77014 12.6669V25.3336C2.77014 28.9753 4.74931 32.8544 10.291 32.8544H19.791C24.9843 32.8544 27.1218 30.9228 27.296 25.9986L29.6235 27.6453C30.6051 28.3419 31.4601 28.5636 32.141 28.5636C32.7268 28.5636 33.186 28.3894 33.4868 28.2311C34.136 27.8986 35.2285 26.9961 35.2285 24.7319V13.2686C35.2285 11.0045 34.136 10.102 33.4868 9.76945ZM17.416 18.0186C15.7851 18.0186 14.4393 16.6886 14.4393 15.0419C14.4393 13.3953 15.7851 12.0653 17.416 12.0653C19.0468 12.0653 20.3926 13.3953 20.3926 15.0419C20.3926 16.6886 19.0468 18.0186 17.416 18.0186Z" fill="#3DCD5C"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -480,15 +504,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="w-[100%] mb-8 md:mb-0 pl-[10px]">
+                                <div class="w-[100%] mb-8 lg:mb-0 px-[10px]">
                                     <div class="flex justify-center flex-wrap xs:mt-[35px]">
                                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                                             <div class="flipper">
-                                                <div class="front">
-                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-5.png"/>
+                                                <div class="front bg-[#C13DCD14]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M25.6349 3.16663H12.3665C6.60319 3.16663 3.16736 6.60246 3.16736 12.3658V25.6183C3.16736 31.3975 6.60319 34.8333 12.3665 34.8333H25.619C31.3824 34.8333 34.8182 31.3975 34.8182 25.6341V12.3658C34.834 6.60246 31.3982 3.16663 25.6349 3.16663ZM12.0815 28.7375C12.0815 29.3866 11.5432 29.925 10.894 29.925C10.2449 29.925 9.70652 29.3866 9.70652 28.7375V25.46C9.70652 24.8108 10.2449 24.2725 10.894 24.2725C11.5432 24.2725 12.0815 24.8108 12.0815 25.46V28.7375ZM20.1882 28.7375C20.1882 29.3866 19.6499 29.925 19.0007 29.925C18.3515 29.925 17.8132 29.3866 17.8132 28.7375V22.1666C17.8132 21.5175 18.3515 20.9791 19.0007 20.9791C19.6499 20.9791 20.1882 21.5175 20.1882 22.1666V28.7375ZM28.2949 28.7375C28.2949 29.3866 27.7565 29.925 27.1074 29.925C26.4582 29.925 25.9199 29.3866 25.9199 28.7375V18.8891C25.9199 18.24 26.4582 17.7016 27.1074 17.7016C27.7565 17.7016 28.2949 18.24 28.2949 18.8891V28.7375ZM28.2949 13.8858C28.2949 14.535 27.7565 15.0733 27.1074 15.0733C26.4582 15.0733 25.9199 14.535 25.9199 13.8858V12.35C21.8824 16.4983 16.8315 19.4275 11.179 20.8366C11.084 20.8683 10.989 20.8683 10.894 20.8683C10.3557 20.8683 9.88069 20.5041 9.73819 19.9658C9.57986 19.3325 9.95986 18.6833 10.609 18.525C15.9449 17.195 20.6949 14.3925 24.4632 10.4341H22.484C21.8349 10.4341 21.2965 9.89579 21.2965 9.24663C21.2965 8.59746 21.8349 8.05913 22.484 8.05913H27.1232C27.1865 8.05913 27.234 8.09079 27.2974 8.09079C27.3765 8.10663 27.4557 8.10663 27.5349 8.13829C27.614 8.16996 27.6774 8.21746 27.7565 8.26496C27.804 8.29663 27.8515 8.31246 27.899 8.34413C27.9149 8.35996 27.9149 8.37579 27.9307 8.37579C27.994 8.43913 28.0415 8.50246 28.089 8.56579C28.1365 8.62913 28.184 8.67663 28.1999 8.73996C28.2315 8.80329 28.2315 8.86663 28.2474 8.94579C28.2632 9.02496 28.2949 9.10413 28.2949 9.19913C28.2949 9.21496 28.3107 9.23079 28.3107 9.24663V13.8858H28.2949Z" fill="#C13DCD"/>
+                                                    </svg>
                                                 </div>
-                                                <div class="back">
-                                                    <img class="rounded-[32px]" src="assets/i.fb-icon-element-5.png"/>
+                                                <div class="back bg-[#C13DCD14]">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                                        <path d="M25.6349 3.16663H12.3665C6.60319 3.16663 3.16736 6.60246 3.16736 12.3658V25.6183C3.16736 31.3975 6.60319 34.8333 12.3665 34.8333H25.619C31.3824 34.8333 34.8182 31.3975 34.8182 25.6341V12.3658C34.834 6.60246 31.3982 3.16663 25.6349 3.16663ZM12.0815 28.7375C12.0815 29.3866 11.5432 29.925 10.894 29.925C10.2449 29.925 9.70652 29.3866 9.70652 28.7375V25.46C9.70652 24.8108 10.2449 24.2725 10.894 24.2725C11.5432 24.2725 12.0815 24.8108 12.0815 25.46V28.7375ZM20.1882 28.7375C20.1882 29.3866 19.6499 29.925 19.0007 29.925C18.3515 29.925 17.8132 29.3866 17.8132 28.7375V22.1666C17.8132 21.5175 18.3515 20.9791 19.0007 20.9791C19.6499 20.9791 20.1882 21.5175 20.1882 22.1666V28.7375ZM28.2949 28.7375C28.2949 29.3866 27.7565 29.925 27.1074 29.925C26.4582 29.925 25.9199 29.3866 25.9199 28.7375V18.8891C25.9199 18.24 26.4582 17.7016 27.1074 17.7016C27.7565 17.7016 28.2949 18.24 28.2949 18.8891V28.7375ZM28.2949 13.8858C28.2949 14.535 27.7565 15.0733 27.1074 15.0733C26.4582 15.0733 25.9199 14.535 25.9199 13.8858V12.35C21.8824 16.4983 16.8315 19.4275 11.179 20.8366C11.084 20.8683 10.989 20.8683 10.894 20.8683C10.3557 20.8683 9.88069 20.5041 9.73819 19.9658C9.57986 19.3325 9.95986 18.6833 10.609 18.525C15.9449 17.195 20.6949 14.3925 24.4632 10.4341H22.484C21.8349 10.4341 21.2965 9.89579 21.2965 9.24663C21.2965 8.59746 21.8349 8.05913 22.484 8.05913H27.1232C27.1865 8.05913 27.234 8.09079 27.2974 8.09079C27.3765 8.10663 27.4557 8.10663 27.5349 8.13829C27.614 8.16996 27.6774 8.21746 27.7565 8.26496C27.804 8.29663 27.8515 8.31246 27.899 8.34413C27.9149 8.35996 27.9149 8.37579 27.9307 8.37579C27.994 8.43913 28.0415 8.50246 28.089 8.56579C28.1365 8.62913 28.184 8.67663 28.1999 8.73996C28.2315 8.80329 28.2315 8.86663 28.2474 8.94579C28.2632 9.02496 28.2949 9.10413 28.2949 9.19913C28.2949 9.21496 28.3107 9.23079 28.3107 9.24663V13.8858H28.2949Z" fill="#C13DCD"/>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -511,9 +539,9 @@
 
         <!-- our History -->
         <div>
-            <section class="w-[100%] h-[100%] flex flex-col items-center justify-center" id="history">
-                <div class="mb-[40px]">
-                    <h1 class="main-title font-[900] leading-[48.6px] text-[36px] text-center pt-[108px] pb-[10px]">
+            <section class="w-[100%] h-[100%] flex flex-col items-center justify-center pt-[108px]" id="history">
+                <div class="mb-[60px]">
+                    <h1 class="main-title font-[900] leading-[48.6px] text-[36px] text-center pb-[10px]">
                         Our History
                     </h1>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
@@ -636,24 +664,23 @@
         <!-- team -->
         <div>
             <section class="">
-                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0">
-                    <div class="mb-[40px]">
-                        <h1 class="main-title text-center pt-[108px] pb-[10px]">
+                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 pt-[108px]">
+                    <div class="mb-[60px]">
+                        <h1 class="main-title text-center pb-[10px]">
                             Meet Our Team
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                     </div>
-                    <div class="flex lg:justify-between justify-center flex-wrap sm:justify-center lg:flex-row md:flex-wrap sm:flex-wrap">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 flex-wrap lg:justify-between justify-center sm:justify-center lg:flex-row">
                             <div>
-                                <div class="pt-[60px]">
-                                    <div class="lg:w-[286px] lg:h-[282px] ml-[10px] mr-[10px] text-center">
+                                <div class="pt-[30px]">
+                                    <div class= ml-[10px] mr-[10px] text-center">
                                         <div>
-                                            <img class="lg:w-[286px] lg:h-[282px]"
-                                                    width="100%" height="100%"
+                                            <img class="mx-auto w-[80%]"
                                                     src="./assets/image 6.png"/>
                                         </div>
                                         <div class="pt-[16px]">
-                                            <div>
+                                            <div class="text-center">
                                                 <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[16px]">
                                                     Esther Foley
                                                 </div>
@@ -702,17 +729,15 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="pt-[60px]">
-                                    <div class="lg:w-[286px] lg:h-[282px] ml-[10px] mr-[10px] text-center">
+                                <div class="pt-[30px]">
+                                    <div class= ml-[10px] mr-[10px] text-center">
                                         <div>
-                                            <img class="lg:w-[286px] lg:h-[282px]"
-                                                    width="100%"
-                                                    height="100%"
+                                            <img class="mx-auto w-[80%]"
                                                     src="./assets/image 7.png"
                                             />
                                         </div>
                                         <div class="pt-[16px]">
-                                            <div>
+                                            <div class="text-center">
                                                 <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[16px]">
                                                     Robert Taylor
                                                 </div>
@@ -763,17 +788,15 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="pt-[60px]">
-                                    <div class="lg:w-[286px] lg:h-[282px] ml-[10px] mr-[10px] text-center">
+                                <div class="pt-[30px]">
+                                    <div class= ml-[10px] mr-[10px] text-center">
                                         <div>
-                                            <img class="lg:w-[286px] lg:h-[282px]"
-                                                    width="100%"
-                                                    height="100%"
+                                            <img class="mx-auto w-[80%]"
                                                     src="./assets/image 8.png"
                                             />
                                         </div>
                                         <div class="pt-[16px]">
-                                            <div>
+                                            <div class="text-center">
                                                 <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[16px]">
                                                     Justin Watson
                                                 </div>
@@ -818,18 +841,15 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="pt-[60px]">
-                                    <div class="lg:w-[286px] lg:h-[20%] text-center 2xl:mt-[0%] xl:mt-[0%] lg:mt-[47%]">
+                                <div class="pt-[30px]">
+                                    <div class="ml-[10px] mr-[10px] text-center 2xl:mt-[0%] xl:mt-[0%]">
                                         <div>
-                                            <img
-                                                class="lg:w-[286px] lg:h-[282px]"
-                                                width="100%"
-                                                height="100%"
-                                                src="./assets/image 9.png"
+                                            <img class="mx-auto w-[80%]"
+                                                    src="./assets/image 9.png"
                                             />
                                         </div>
                                         <div class="pt-[16px]">
-                                            <div>
+                                            <div class="text-center">
                                                 <div class="text-[22px] leading-[29.7px] font-[700] text-[#000000] satoshi-font mt-[16px]">
                                                     Lucio Murray
                                                 </div>
@@ -883,13 +903,13 @@
 
         <!-- What People Say  -->
         <div class="mx-auto px-[50px] md:px-6 satoshi-font xs:px-[3px] max-w-screen-2xl">
-            <section class="mb-32 text-center justify-items-center ">
-                <div class="grid justify-items-center mb-[65px]">
-                    <h2 class="main-title  text-3xl font-[900] pt-[108px] pb-[10px]">What People Say</h2>
+            <section class="text-center justify-items-center pt-[108px]">
+                <div class="grid justify-items-center mb-[60px]">
+                    <h2 class="main-title  text-3xl font-[900] pb-[10px]">What People Say</h2>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                 </div>
-                <div class="grid gap-x-6 md:grid-cols-3 px-5 md:px-0 lg:gap-x-12">
-                    <div class="mb-12 md:mb-0">
+                <div class="owl-carousel owl-theme">
+                    <div class="item mx-5 mb-12 md:mb-0">
                         <div class="mb-6 flex justify-center satoshi-font">
                             <img src="./assets/Frame 36.png" class="w-32 rounded-full shadow-lg dark:shadow-black/20"/>
                         </div>
@@ -964,7 +984,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-12 md:mb-0">
+                    <div class="item mx-5 mb-12 md:mb-0">
                         <div class="mb-6 flex justify-center">
                             <img src="./assets/Frame 37.png" class="w-32 rounded-full shadow-lg dark:shadow-black/20"/>
                         </div>
@@ -1040,7 +1060,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-12 md:mb-0">
+                    <div class="item mx-5 mb-12 md:mb-0">
                         <div class="mb-6 flex justify-center">
                             <img src="./assets/Frame 37 (1).png" class="w-32 rounded-full shadow-lg dark:shadow-black/20"/>
                         </div>
@@ -1119,17 +1139,17 @@
 
         <!-- blog -->
         <div id="">
-            <section class="w-[100%] h-[100%]" id="blog">
-                <div class="grid max-w-screen-2xl px-4 xs:mt-[-11rem] mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 sm:mt-[-18%] 2xl:mt-[-2%] xl:mt-[0%] lg:mt-[-11%]">
-                    <div class="grid justify-items-center mb-[40px]">
-                        <h1 class="main-title text-center pt-[108px] pb-[10px]">
+            <section class="w-[100%] h-[100%] pt-[108px]" id="blog">
+                <div class="grid max-w-screen-2xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 ">
+                    <div class="grid justify-items-center mb-[60px]">
+                        <h1 class="main-title text-center pb-[10px]">
                             Our Blog
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                     </div>
                     <div class="flex justify-between flex-wrap w-full h-full lg:flex-row">
                             <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 md:px-[50px] 2xl:px-[10px]">
-                                <div class="pt-[60px]">
+                                <div class="">
                                     <div class="w-full h-[500px]">
                                         <div>
                                             <img
@@ -1167,7 +1187,7 @@
                                 </div>
                             </div>
                             <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 md:px-[50px] xs:mt-[-127px] 2xl:px-[10px]">
-                                <div class="pt-[60px] xs:mt-[60px]">
+                                <div class=" xs:mt-[60px]">
                                     <div class="w-full h-[500px]">
                                         <div>
                                             <img
@@ -1205,7 +1225,7 @@
                                 </div>
                             </div>
                             <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 xs:mt-[-127px] 2xl:px-[10px] md:px-[50px]">
-                            <div class="pt-[60px] xs:mt-[60px]">
+                            <div class=" xs:mt-[60px]">
                                 <div class="w-full h-[500px]">
                                     <div>
                                         <img
@@ -1249,23 +1269,23 @@
 
         <!-- Our FAQs  -->
         <div id="faqs">
-            <section class="w-[100%]">
+            <section class="w-[100%] pt-[108px]">
                 <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-0 xs:mt-[-10%] sm:mt-[0%] lg:mt-[5%] xl:mt-[5%] lg:mt-[-12%] md:-[-12%] sm:mt-[-12%] justify-items-center ">
-                    <div class="mb-[40px]">
-                        <h1 class="main-title text-center pt-[108px] pb-[10px]">
+                    <div class="mb-[60px]">
+                        <h1 class="main-title text-center pb-[10px]">
                             Our FAQs
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                     </div>
-                    <div class="accordion py-6">
+                    <div class="accordion">
                             <div class="accordion-item">
-                                <div id="myHeading" class="accordion-item-header text-[20px] leading-[27px] font-[500] satoshi-font">
-                                    <div id="changeColorBtn">
+                                <div id="myHeading" class="accordion-item-header leading-[27px] font-[500] satoshi-font active">
+                                    <div id="changeColorBtn" class="xs:text-[16px] md:text-[20px]">
                                         Lorem ipsum dolor sit amet consectetur lorem doller sit?
                                     </div>
                                 </div>
-                                <div class="accordion-item-body">
-                                    <div class="accordion-item-body-content text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
+                                <div class="accordion-item-body" style="max-height: fit-content">
+                                    <div class="accordion-item-body-content xs:text-[14px] md:text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
                                         Lorem Ipsum is simply dummy text of the printing and
                                         typesetting industry. Lorem Ipsum has been the industry's
                                         standard dummy text ever since the 1500s,
@@ -1273,11 +1293,11 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <div class="accordion-item-header text-[20px] leading-[27px] font-[500] satoshi-font">
+                                <div class="accordion-item-header  xs:text-[16px] md:text-[20px] leading-[27px] font-[500] satoshi-font">
                                     Lorem ipsum dolor sit amet consectetur lorem doller sit?
                                 </div>
                                 <div class="accordion-item-body">
-                                    <div class="accordion-item-body-content text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
+                                    <div class="accordion-item-body-content xs:text-[14px] md:text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
                                         HTML, aka HyperText Markup Language, is the dominant markup
                                         language for creating websites and anything that can be
                                         viewed in a web browser.
@@ -1285,11 +1305,11 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <div class="accordion-item-header text-[20px] leading-[27px] font-[500] satoshi-font">
+                                <div class="accordion-item-header  xs:text-[16px] md:text-[20px] leading-[27px] font-[500] satoshi-font">
                                     Contrary to popular belief, Lorem Ipsum is not simply random text?
                                 </div>
                                 <div class="accordion-item-body">
-                                    <div class="accordion-item-body-content text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
+                                    <div class="accordion-item-body-content xs:text-[14px] md:text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
                                         HTML, aka HyperText Markup Language, is the dominant markup
                                         language for creating websites and anything that can be
                                         viewed in a web browser.
@@ -1297,11 +1317,11 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <div class="accordion-item-header text-[20px] leading-[27px] font-[500] satoshi-font">
+                                <div class="accordion-item-header  xs:text-[16px] md:text-[20px] leading-[27px] font-[500] satoshi-font">
                                     It is a long established fact that a reader will be distracted eadable?
                                 </div>
                                 <div class="accordion-item-body">
-                                    <div class="accordion-item-body-content text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
+                                    <div class="accordion-item-body-content xs:text-[14px] md:text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
                                         HTML, aka HyperText Markup Language, is the dominant markup
                                         language for creating websites and anything that can be
                                         viewed in a web browser.
@@ -1309,11 +1329,11 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <div class="accordion-item-header text-[20px] leading-[27px] font-[500] satoshi-font">
+                                <div class="accordion-item-header  xs:text-[16px] md:text-[20px] leading-[27px] font-[500] satoshi-font">
                                     Lorem ipsum dolor sit amet?
                                 </div>
                                 <div class="accordion-item-body">
-                                    <div class="accordion-item-body-content text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
+                                    <div class="accordion-item-body-content xs:text-[14px] md:text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
                                         HTML, aka HyperText Markup Language, is the dominant markup
                                         language for creating websites and anything that can be
                                         viewed in a web browser.
@@ -1321,11 +1341,11 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                            <div class="accordion-item-header text-[20px] leading-[27px] font-[500] satoshi-font">
+                            <div class="accordion-item-header  xs:text-[16px] md:text-[20px] leading-[27px] font-[500] satoshi-font">
                                 Lorem ipsum dolor sit amet consectetur lorem doller sit?
                             </div>
                             <div class="accordion-item-body">
-                                <div class="accordion-item-body-content text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
+                                <div class="accordion-item-body-content xs:text-[14px] md:text-[16px] leading-[24px] font-[400] text-[#808080] satoshi-font">
                                     HTML, aka HyperText Markup Language, is the dominant markup
                                     language for creating websites and anything that can be
                                     viewed in a web browser.
@@ -1339,8 +1359,8 @@
 
         <!-- Get in Touch  -->
         <div>
-            <section>
-                <div class="lg:flex items-center justify-center md:mt-0 xl:p-0 w-[100%] mt-[400px] sm:mt-[99px] md:mt-[74px] xs:mt-[54px]">
+            <section class="mt-[108px]">
+                <div class="lg:flex items-center justify-center xl:p-0 w-[100%]">
                     <div class="lg:flex pl-[2%] w-[100%] 2xl:pl-[10%]">
                         <img class="" src="assets/Map.png"/>
                     </div>
@@ -1411,10 +1431,12 @@
                                 Message
                             </label>
                         </div>
-                        <button type="button"
-                                class="satoshi-font text-white font-[700] leading-[21.6px] mt-8 text-[16px] w-[134px] h-[54px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full px-5 py-2.5 text-center mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Submit Now
-                        </button>
+                        <div class="text-center">
+                            <button type="button"
+                                    class="satoshi-font text-white font-[700] leading-[21.6px] mt-8 text-[16px] w-[134px] h-[54px] bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full px-5 py-2.5 text-center mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Submit Now
+                            </button>
+                        </div>
                     </form>
                     </div>
                 </div>
@@ -1423,20 +1445,20 @@
 
         <!-- footer -->
         <div>
-            <footer class="bg-white dark:bg-gray-900 mt-20">
+            <footer class="bg-white dark:bg-gray-900 mt-[108px] mb-[20px] lg:mb-[60px]">
                 <div class="w-full max-w-screen-2xl mx-auto p-5 md:py">
-                    <div class="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-2 gap-8">
+                    <div class="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 gap-8 text-center sm:text-left">
                         <div>
-                            <a href="" class="flex items-center justify-start">
+                            <a href="" class="flex items-center justify-center sm:justify-start">
                                 <img src="assets/Group.png" class="h-[48px] w-[41.57px] mr-[0.5rem]"/>
                                 <span class="text-2xl font-bold">DIGITO</span>
                             </a>
                             <div>
                                 <ul class="items-center text-center sm:text-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 mt-6 text-gray-500 dark:text-gray-400 font-medium inline-font">
-                                    <li class="mb-4 text-left">
+                                    <li class="mb-4 text-left text-center sm:text-left">
                                         <a href="" class="satoshi-font font-medium text-[16px] leading-[21.6px]" style="color: #1C1C1C">Call - <span style="color: #808080">(123) 45678910</span></a>
                                     </li>
-                                    <li class="mb-4 text-left">
+                                    <li class="mb-4 text-left text-center sm:text-left">
                                         <a href="" class="satoshi-font font-medium text-[16px] leading-[21.6px]" style="color: #1C1C1C">Mail - <span style="color: #808080">info@digito.com</span></a>
                                     </li>
                                 </ul>
@@ -1519,15 +1541,6 @@
             );
             accordionItemHeaders.forEach((accordionItemHeader) => {
                 accordionItemHeader.addEventListener("click", (event) => {
-                    const heading = document.getElementById("myHeading");
-                    const changeColorBtn = document.getElementById("changeColorBtn");
-                    if (heading.classList.contains("color1")) {
-                        heading.classList.remove("color1");
-                        heading.classList.add("color2");
-                    } else {
-                        heading.classList.remove("color2");
-                        heading.classList.add("color1");
-                    }
                     const currentlyActiveAccordionItemHeader = document.querySelector(
                         ".accordion-item-header.active"
                     );
@@ -1620,6 +1633,28 @@
                 showSlide(currentIndex);
 
             });
+        </script>
+
+        <script>
+            $('.owl-carousel').owlCarousel({
+                items: 3,
+                loop:true,
+                nav:false,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                dots: false,
+                responsive:{
+                    // 0:{
+                    //     items:1
+                    // },
+                    // 600:{
+                    //     items:3
+                    // },
+                    1199:{
+                        items:1
+                    },
+                }
+            })
         </script>
 
     </body>
