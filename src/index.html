@@ -17,9 +17,9 @@
         <!--used https://animate.style/ for animation-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <!--owl carousel-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+        <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+        <script src="owlcarousel/owl.carousel.min.js"></script>
     </head>
 
     <body>
@@ -210,8 +210,8 @@
             }
         </style>
         <div>
-            <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-gray-200 dark:border-gray-600 h-[100px]">
-            <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-gray-200 dark:border-gray-600">
+            <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto py-[26px] md:py-[23px] px-[16px]">
                 <a href="" class="flex items-center">
                     <img src="assets/Group.png" class="h-[48px] W-[41.57px] mr-2"/>
                     <span class="text-2xl font-bold">DIGITO</span>
@@ -248,7 +248,8 @@
                     <ul class="satoshi-font flex navbar-ul nav-tabs flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
                             <a href="#"
-                                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 md:dark:text-blue-500"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white
+                                dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                 aria-current="page">Home</a>
                         </li>
                         <li>
@@ -908,10 +909,10 @@
                     <h2 class="main-title  text-3xl font-[900] pb-[10px]">What People Say</h2>
                     <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                 </div>
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme owl-carousel1">
                     <div class="item mx-5 mb-12 md:mb-0">
-                        <div class="mb-6 flex justify-center satoshi-font">
-                            <img src="./assets/Frame 36.png" class="w-32 rounded-full shadow-lg dark:shadow-black/20"/>
+                        <div class="mb-6 mx-auto w-32 satoshi-font">
+                            <img src="./assets/Frame 36.png" class="rounded-full shadow-lg dark:shadow-black/20"/>
                         </div>
                         <div class="border-2 mt-[-80px] py-2 px-5 pb-10 rounded-2xl satoshi-font">
                             <h5 class="mb-2 text-[20px] leading-[27px] font-[700] mt-[68px] satoshi-font">
@@ -930,13 +931,13 @@
                                         fill="#0055FF"
                                 />
                             </svg>
-                            <p class="mb-4 mt-3 w-[80%] text-left text-[16px] text-[#808080] xs:w-[99%] font-[400] leading-[26px]">
+                            <p class="mb-4 mt-3 text-left text-[16px] text-[#808080] font-[400] leading-[26px]">
                                 Lorem ipsum dolor sit amet, consecur adipiscing elit. comentum
                                 aliquam tempor tortor hendrerit tincidunt.
                             </p>
 
                             <div class="flex mt-8">
-                                <img src="./assets/Facebook.png" class="mr-auto"/>
+                                <img src="./assets/Facebook.png" class="mr-auto" style="width: 123px!important; height: 24px!important"/>
 
                                 <ul class="mb-0 flex justify-center">
                                     <li>
@@ -985,8 +986,8 @@
                         </div>
                     </div>
                     <div class="item mx-5 mb-12 md:mb-0">
-                        <div class="mb-6 flex justify-center">
-                            <img src="./assets/Frame 37.png" class="w-32 rounded-full shadow-lg dark:shadow-black/20"/>
+                        <div class="mb-6 mx-auto w-32">
+                            <img src="./assets/Frame 37.png" class="rounded-full shadow-lg dark:shadow-black/20"/>
                         </div>
                         <div class="border-2 mt-[-80px] py-2 px-5 pb-10 rounded-2xl">
                             <h5 class="mb-2 text-[20px] leading-[27px] font-[700] mt-[68px] satoshi-font">
@@ -1005,13 +1006,13 @@
                                     d="M10.693 11.9645C13.0914 11.9645 15.0235 12.643 16.4892 14C17.9549 15.357 18.6877 17.26 18.6877 19.7092C18.6877 22.0922 17.8716 24.078 16.2393 25.6667C14.6404 27.2222 12.3419 28 9.34385 28C6.34583 28 4.03068 27.0071 2.39842 25.0213C0.799474 23.0355 0 20.4705 0 17.3262C0 14.3475 0.732851 11.7329 2.19855 9.48227C3.69757 7.19858 5.56301 5.27896 7.79487 3.7234C10.0267 2.16785 12.2419 0.926714 14.4405 0L16.2393 3.7234C14.8069 4.28605 13.3412 5.08037 11.8422 6.10638C10.3765 7.13238 9.14398 8.27423 8.14464 9.53191C7.1453 10.7896 6.62897 12.0307 6.59566 13.2553C6.72891 13.0567 7.16195 12.792 7.89481 12.461C8.62766 12.13 9.56038 11.9645 10.693 11.9645ZM32.9283 11.9645C35.3268 11.9645 37.2588 12.643 38.7245 14C40.1902 15.357 40.9231 17.26 40.9231 19.7092C40.9231 22.0922 40.1069 24.078 38.4747 25.6667C36.8757 27.2222 34.5773 28 31.5792 28C28.5812 28 26.2661 27.0071 24.6338 25.0213C23.0348 23.0355 22.2354 20.4705 22.2354 17.3262C22.2354 14.3475 22.9682 11.7329 24.4339 9.48227C25.9329 7.19858 27.7984 5.27896 30.0302 3.7234C32.2621 2.16785 34.4773 0.926714 36.6759 0L38.4747 3.7234C37.0423 4.28605 35.5766 5.08037 34.0776 6.10638C32.6119 7.13238 31.3794 8.27423 30.38 9.53191C29.3807 10.7896 28.8643 12.0307 28.831 13.2553C28.9643 13.0567 29.3973 12.792 30.1302 12.461C30.863 12.13 31.7957 11.9645 32.9283 11.9645Z"
                                     fill="#0055FF"/>
                             </svg>
-                            <p class="mb-4 mt-3 w-[80%] text-left text-[16px] text-[#808080] xs:w-[99%] font-[400] leading-[26px]">
+                            <p class="mb-4 mt-3 text-left text-[16px] text-[#808080] font-[400] leading-[26px]">
                                 Lorem ipsum dolor sit amet, consecur adipiscing elit. comentum
                                 aliquam tempor tortor hendrerit tincidunt.
                             </p>
 
                             <div class="flex mt-8">
-                                <img src="./assets/Google.png" class="mr-auto"/>
+                                <img src="./assets/Google.png" class="mr-auto" style="width: 73px!important; height: 24px!important"/>
 
                                 <ul class="mb-0 flex justify-center">
                                     <li>
@@ -1061,8 +1062,8 @@
                         </div>
                     </div>
                     <div class="item mx-5 mb-12 md:mb-0">
-                        <div class="mb-6 flex justify-center">
-                            <img src="./assets/Frame 37 (1).png" class="w-32 rounded-full shadow-lg dark:shadow-black/20"/>
+                        <div class="mb-6 mx-auto w-32">
+                            <img src="./assets/Frame 37 (1).png" class="rounded-full shadow-lg dark:shadow-black/20"/>
                         </div>
                         <div class="border-2 mt-[-80px] py-2 px-5 pb-10 rounded-2xl">
                             <h5 class="mb-2 text-[20px] leading-[27px] font-[700] mt-[68px] satoshi-font">
@@ -1080,13 +1081,13 @@
                                 <path d="M10.693 11.9645C13.0914 11.9645 15.0235 12.643 16.4892 14C17.9549 15.357 18.6877 17.26 18.6877 19.7092C18.6877 22.0922 17.8716 24.078 16.2393 25.6667C14.6404 27.2222 12.3419 28 9.34385 28C6.34583 28 4.03068 27.0071 2.39842 25.0213C0.799474 23.0355 0 20.4705 0 17.3262C0 14.3475 0.732851 11.7329 2.19855 9.48227C3.69757 7.19858 5.56301 5.27896 7.79487 3.7234C10.0267 2.16785 12.2419 0.926714 14.4405 0L16.2393 3.7234C14.8069 4.28605 13.3412 5.08037 11.8422 6.10638C10.3765 7.13238 9.14398 8.27423 8.14464 9.53191C7.1453 10.7896 6.62897 12.0307 6.59566 13.2553C6.72891 13.0567 7.16195 12.792 7.89481 12.461C8.62766 12.13 9.56038 11.9645 10.693 11.9645ZM32.9283 11.9645C35.3268 11.9645 37.2588 12.643 38.7245 14C40.1902 15.357 40.9231 17.26 40.9231 19.7092C40.9231 22.0922 40.1069 24.078 38.4747 25.6667C36.8757 27.2222 34.5773 28 31.5792 28C28.5812 28 26.2661 27.0071 24.6338 25.0213C23.0348 23.0355 22.2354 20.4705 22.2354 17.3262C22.2354 14.3475 22.9682 11.7329 24.4339 9.48227C25.9329 7.19858 27.7984 5.27896 30.0302 3.7234C32.2621 2.16785 34.4773 0.926714 36.6759 0L38.4747 3.7234C37.0423 4.28605 35.5766 5.08037 34.0776 6.10638C32.6119 7.13238 31.3794 8.27423 30.38 9.53191C29.3807 10.7896 28.8643 12.0307 28.831 13.2553C28.9643 13.0567 29.3973 12.792 30.1302 12.461C30.863 12.13 31.7957 11.9645 32.9283 11.9645Z"
                                         fill="#0055FF"/>
                             </svg>
-                            <p class="mb-4 mt-3 w-[80%] text-left text-[16px] text-[#808080] xs:w-[99%] font-[400] leading-[26px]">
+                            <p class="mb-4 mt-3 text-left text-[16px] text-[#808080] font-[400] leading-[26px]">
                                 Lorem ipsum dolor sit amet, consecur adipiscing elit. comentum
                                 aliquam tempor tortor hendrerit tincidunt.
                             </p>
 
                             <div class="flex mt-8">
-                                <img src="./assets/Amazon.png" class="mr-auto"/>
+                                <img src="./assets/Amazon.png" class="mr-auto" style="width: 80px!important; height: 24px!important"/>
 
                                 <ul class="mb-0 flex justify-center">
                                     <li>
@@ -1147,10 +1148,10 @@
                         </h1>
                         <div class="border-[3px] border-[#F0B80F] rounded-[24px] w-[84px] h-[6px] about-underline"></div>
                     </div>
-                    <div class="flex justify-between flex-wrap w-full h-full lg:flex-row">
-                            <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 md:px-[50px] 2xl:px-[10px]">
+                    <div class="owl-carousel owl-theme owl-carousel2 overflow-hidden flex justify-between flex-wrap w-full h-full lg:flex-row">
+                            <div class="item w-full p-4 md:px-[50px] 2xl:px-[10px]">
                                 <div class="">
-                                    <div class="w-full h-[500px]">
+                                    <div class="w-full">
                                         <div>
                                             <img
                                                 width="852"
@@ -1186,9 +1187,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 md:px-[50px] xs:mt-[-127px] 2xl:px-[10px]">
-                                <div class=" xs:mt-[60px]">
-                                    <div class="w-full h-[500px]">
+                            <div class="item w-full p-4 md:px-[50px] 2xl:px-[10px]">
+                                <div>
+                                    <div class="w-full">
                                         <div>
                                             <img
                                                 width="852"
@@ -1224,45 +1225,45 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-full sm:w-[50%] lg:w-[33.33%] p-4 xs:mt-[-127px] 2xl:px-[10px] md:px-[50px]">
-                            <div class=" xs:mt-[60px]">
-                                <div class="w-full h-[500px]">
-                                    <div>
-                                        <img
-                                            width="852"
-                                            height="700"
-                                            src="./assets/Frame 28 (2).png"
-                                        />
-                                    </div>
-                                    <div class="pt-[16px] flex justify-between items-center mb-13">
-                                        <h1 class="font-medium p-5 rounded-md text-zinc-400 text-sm/[12px] bg-[#F5F5F5] h-[32px] leading-[16.2px] flex justify-center items-center satoshi-font">
-                                            Business Marketing
-                                        </h1>
+                            <div class="item w-full p-4 2xl:px-[10px] md:px-[50px]">
+                                <div>
+                                    <div class="w-full">
                                         <div>
-                                            <div class="font-medium satoshi-font text-[16px]">30 Min read</div>
+                                            <img
+                                                width="852"
+                                                height="700"
+                                                src="./assets/Frame 28 (2).png"
+                                            />
                                         </div>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium text-lg leading-loose mt-[20px] satoshi-font">
-                                            Lorem ipsum dolor sit amet lorem sit onsectetur ipsum.
+                                        <div class="pt-[16px] flex justify-between items-center mb-13">
+                                            <h1 class="font-medium p-5 rounded-md text-zinc-400 text-sm/[12px] bg-[#F5F5F5] h-[32px] leading-[16.2px] flex justify-center items-center satoshi-font">
+                                                Business Marketing
+                                            </h1>
+                                            <div>
+                                                <div class="font-medium satoshi-font text-[16px]">30 Min read</div>
+                                            </div>
                                         </div>
-                                        <div class="font-medium text-base text-zinc-400 mt-[5px] satoshi-font">
-                                            October 16 2022
+                                        <div>
+                                            <div class="font-medium text-lg leading-loose mt-[20px] satoshi-font">
+                                                Lorem ipsum dolor sit amet lorem sit onsectetur ipsum.
+                                            </div>
+                                            <div class="font-medium text-base text-zinc-400 mt-[5px] satoshi-font">
+                                                October 16 2022
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="mt-5 border mb-5"></div>
-                                    <div>
-                                        <div class="font-normal mb-2 text-base text-zinc-400 leading-loose satoshi-font">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Est parturient orci ut a integer ullamcorper ultricies
-                                            Et egestas.
+                                        <div class="mt-5 border mb-5"></div>
+                                        <div>
+                                            <div class="font-normal mb-2 text-base text-zinc-400 leading-loose satoshi-font">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Est parturient orci ut a integer ullamcorper ultricies
+                                                Et egestas.
+                                            </div>
+                                            <a href="#" class="text-blue-600 font-medium text-base satoshi-font">Read More</a>
                                         </div>
-                                        <a href="#" class="text-blue-600 font-medium text-base satoshi-font">Read More</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -1636,26 +1637,58 @@
         </script>
 
         <script>
-            $('.owl-carousel').owlCarousel({
-                items: 3,
+            $('.owl-carousel1').owlCarousel({
+                items: 1,
                 loop:true,
                 nav:false,
                 autoplay: true,
-                autoplayTimeout: 1000,
+                autoplayTimeout: 3000,
                 dots: false,
                 responsive:{
-                    // 0:{
-                    //     items:1
-                    // },
-                    // 600:{
-                    //     items:3
-                    // },
+                    767:{
+                        items:2,
+                    },
+                    992:{
+                        autoplay: false,
+                        mouseDrag: false,
+                        items:2
+                    },
                     1199:{
-                        items:1
+                        autoplay: false,
+                        mouseDrag: false,
+                        loop: false,
+                        items:3
                     },
                 }
-            })
+            });
         </script>
+
+    <script>
+        $('.owl-carousel2').owlCarousel({
+            items: 1,
+            loop:true,
+            nav:false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            dots: false,
+            responsive:{
+                767:{
+                    items: 2,
+                },
+                992:{
+                    autoplay: false,
+                    mouseDrag: false,
+                    items: 2
+                },
+                1199:{
+                    autoplay: false,
+                    mouseDrag: false,
+                    loop: false,
+                    items:3
+                },
+            }
+        });
+    </script>
 
     </body>
 </html>
